@@ -4,6 +4,8 @@ MineCraftEC2init
 initial setup script for minecraft with MSM on an AWS EC2 instance
 
 this script can be linked in the user-data when creating a new EC2 instance
+https://raw.github.com/zachofalltrades/MineCraftEC2init/master/setup-redhat.sh
+
 
 
 post-install, login via shell and go through interactive setup:
