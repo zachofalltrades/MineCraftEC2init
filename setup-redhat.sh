@@ -9,11 +9,11 @@ wget -q ${UPDATE_URL}/installers/common.sh -O /tmp/msmcommon.sh
 source /tmp/msmcommon.sh && rm -f /tmp/msmcommon.sh
 
 function install_log() {
-    echo "MSM INSTALL: $*" >>/tmp/msminstall.log
+    echo "MSM INSTALL: $*"
 }
 
 function install_error() {
-    echo "MSM INSTALL ERROR: $*" >>/tmp/msminstall.log
+    echo "MSM INSTALL ERROR: $*"
     exit 1
 }
 
