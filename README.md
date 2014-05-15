@@ -6,7 +6,8 @@ on an AWS EC2 instance
 this script is meant to be linked in the user-data when creating a new EC2 instance
 ```
 #!/bin/bash
-#include https://raw.github.com/zachofalltrades/MineCraftEC2init/master/setup-redhat.sh
+sudo wget https://raw.github.com/zachofalltrades/MineCraftEC2init/master/setup-redhat.sh -O /tmp/msmbootstrap.sh
+source /tmp/msmbootstrap.sh
 ```
 
 You should be able to log into your new instance and have an up to date MSM environment ready to go. You will probably want to check the configuration (especially backup options and RAM).
