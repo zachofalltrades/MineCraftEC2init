@@ -6,14 +6,14 @@ yum install -y noip htop
 UPDATE_URL="https://raw.github.com/marcuswhybrow/minecraft-server-manager/master"
 
 wget -q ${UPDATE_URL}/installers/common.sh -O /tmp/msmcommon.sh
-source /tmp/msmcommon.sh && rm -f /tmp/msmcommon.sh
+source /tmp/msmcommon.sh
 
 function install_log() {
-    echo "MSM INSTALL: $*"
+    echo "MSM INSTALL: $*" >>/tmp/msminstall.log
 }
 
 function install_error() {
-    echo "MSM INSTALL ERROR: $*"
+    echo "MSM INSTALL ERROR: $*" >>/tmp/msminstall.log
     exit 1
 }
 
