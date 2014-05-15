@@ -31,4 +31,6 @@ function config_installation() {
 }
 install_msm
 
+msm update
+
 ln -T /etc/init.d/msm /usr/bin/msm
