@@ -8,6 +8,15 @@ UPDATE_URL="https://raw.github.com/marcuswhybrow/minecraft-server-manager/master
 wget -q ${UPDATE_URL}/installers/common.sh -O /tmp/msmcommon.sh
 source /tmp/msmcommon.sh && rm -f /tmp/msmcommon.sh
 
+function install_log() {
+    echo "MSM INSTALL: $*" >>/tmp/msminstall.log
+}
+
+function install_error() {
+    echo "MSM INSTALL ERROR: $*" >>/tmp/msminstall.log
+    exit 1
+}
+
 function update_system_packages() {
     install_log "Updating sources"
     sudo yum update --skip-broken || install_error "Couldn't update packages"
@@ -25,13 +34,11 @@ function enable_init() {
 
 function config_installation() {
     msm_user_system=true
-    install_log "Using Default Installation Options"
     install_log "Install directory: ${msm_dir}"
-    install_log "New server user to be created: ${msm_user}"
-    install_log "As system account: ${msm_user_system}"
+    install_log "New system user to be created: ${msm_user}"
 }
+
 install_msm
 
-msm update
 
-ln -T /etc/init.d/msm /usr/bin/msm
+sudo ln -s /etc/init.d/msm /usr/bin/msm
