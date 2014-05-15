@@ -5,6 +5,7 @@ on an AWS EC2 instance
 
 this script is meant to be linked in the user-data when creating a new EC2 instance
 ```
+#!/bin/bash
 #include https://raw.github.com/zachofalltrades/MineCraftEC2init/master/setup-redhat.sh
 ```
 
