@@ -1,10 +1,12 @@
 MineCraftEC2init
 ================
 
-initial setup script for minecraft with MSM on an AWS EC2 instance
+initial setup script for minecraft with MSM (https://github.com/marcuswhybrow/minecraft-server-manager)
+on an AWS EC2 instance
 
-this script can be linked in the user-data when creating a new EC2 instance
-https://raw.github.com/zachofalltrades/MineCraftEC2init/master/setup-redhat.sh
+this script is meant to be linked in the user-data when creating a new EC2 instance
+
+#include https://raw.github.com/zachofalltrades/MineCraftEC2init/master/setup-redhat.sh
 
 
 
