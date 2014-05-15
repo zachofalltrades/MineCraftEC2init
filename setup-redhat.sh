@@ -1,7 +1,7 @@
 #!/bin/bash
-sudo yum update -y
-sudo yum-config-manager --enable epel
-sudo yum install -y noip htop
+yum update -y
+yum-config-manager --enable epel
+yum install -y noip htop
 
 UPDATE_URL="https://raw.github.com/marcuswhybrow/minecraft-server-manager/master"
 
@@ -19,17 +19,17 @@ function install_error() {
 
 function update_system_packages() {
     install_log "Updating sources"
-    sudo yum update --skip-broken || install_error "Couldn't update packages"
+    yum update --skip-broken || install_error "Couldn't update packages"
 }
 
 function install_dependencies() {
     install_log "Installing required packages"
-    sudo yum install screen rsync zip java || install_error "Couldn't install dependencies"
+    yum install screen rsync zip java || install_error "Couldn't install dependencies"
 }
 
 function enable_init() {
     install_log "Enabling automatic startup and shutdown"
-    sudo chkconfig --add msm
+    chkconfig --add msm
 }
 
 function config_installation() {
@@ -41,4 +41,4 @@ function config_installation() {
 install_msm
 
 
-sudo ln -s /etc/init.d/msm /usr/bin/msm
+ln -s /etc/init.d/msm /usr/bin/msm
